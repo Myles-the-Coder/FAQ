@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  background: linear-gradient(to right, #649173, #dbd5a4);
+  width: 100vw;
+  height: 100vh;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+}
+
+h1 {
+  text-align:center;
+  margin: 50px 0 30px;
+  opacity: 0.7;
+}
+.container {
+max-width: 600px;
+margin: 0 auto
+}
+
+.container .box {
+  background-color: transparent;
+  border-radius: 10px;
+  margin: 20px 0;
+  font-size: 16px;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.container .box.active {
+  background-color: white;
+  box-shadow: 0 3px 6px rgba(0,0,0, 0.1), 
+  0 3px 6px rgba(0,0,0,.1);
+}
+
+.container .box.active::before,
+.container .box.active::after {
+  content:'\f075';
+  font-family: 'Font Awesome 5 Free';
+  color:#2ecc71;
+  font-size: 7rem;
+  position: absolute;
+  opacity: 0.2;
+  top: 20px;
+  left: 20px;
+  z-index:0
+}
+
+.container .box.active::before {
+  color: #3498db;
+  top:-10px;
+  left:-30px;
+  transform: rotateY(180deg)
+}
+
+.box .title {
+  margin: 0 30px 0 0
+}
+
+.faq-text {
+  display:none
+}
+
+.box.active .faq-text {
+  display: block;
+}
+
+.container .button {
+  background-color: transparent;
+  border-radius:50% ;
+  float: right;
+  display: flex;
+  align-items: center;
+  justify-content: center ;
+  font-size: 16px;
+  padding:0;
+  position: absolute;
+  top: 30px;
+  right:30px;
+  height:30px;
+  width:30px;
+ border: 0;
+}
+
+.container .button .fa-times {
+  display: none;
+  color: white
+}
+
+.container .box.active .button .fa-times {
+  display: block;
+}
+
+.container .box.active .button .fa-chevron-down {
+  display: none;
+}
+
+.container .box.active .button {
+  background-color: #9fa4a8;
+}
+
+.button:focus{
+  outline: 0;
+  box-shadow: 0;
+}
